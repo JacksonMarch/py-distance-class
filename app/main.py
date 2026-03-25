@@ -109,7 +109,7 @@ class Distance:
     def __mul__(self, other: int | float) -> Distance | None:
         if isinstance(other, (int, float)):
             return Distance(self.km * other)
-        return None
+        return NotImplemented
 
     def __truediv__(self, other: int | float) -> Distance:
         if isinstance(other, (int, float)):
@@ -150,4 +150,4 @@ class Distance:
             return self.km == other.km
         if isinstance(other, (int, float)):
             return self.km == other
-        return False
+        return NotImplemented
